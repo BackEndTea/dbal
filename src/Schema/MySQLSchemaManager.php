@@ -194,7 +194,7 @@ class MySQLSchemaManager extends AbstractSchemaManager
         }
 
         $options = [
-            'length'        => $length,
+            'length'        => $length !== null ? (int) $length : null,
             'unsigned'      => str_contains($tableColumn['column_type'], 'unsigned'),
             'fixed'         => $fixed,
             'default'       => $columnDefault,
